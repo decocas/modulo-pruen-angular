@@ -1,0 +1,51 @@
+ 
+<div class="container-fluid">
+<div class="row">
+	<p>Nuestros Productos</p>
+<div>
+	<ul>
+		<li *ngFor="let i of n1"> {{i}}</li>
+	</ul>
+</div>
+
+<div class="col-sm-4">
+<div class="example-icon col-sm-4">
+	 <button mat-icon-button color="warn" (click)="logout()"><mat-icon>cancel</mat-icon>salir </button>	
+</div>
+<div *ngIf="mensaje" class="alert alert-success alert-dismissable fade show" role="alert">
+		<a href="#" class="close" (click)="closeAlert()">
+        <span aria-hidden="true"> &times;</span>  
+        </a>
+        {{mensaje}}
+	</div>
+
+	<mat-list color="primary">
+ <mat-list-item *ngFor="let a of f" [class.selected]="a===frito" (click)="abrir(a)">
+ 	<button mat-flat-button ><span> {{a.nombre|uppercase }}</span>  ${{a.precio}}/cu </button> 
+ </mat-list-item>
+ </mat-list>
+  
+<div class="form" *ngIf="frito">
+	<form class="form-group">
+		{{frito.nombre|uppercase}}
+	<div class="form-group-sm-2"><input type="number" min="1" value="cantidad" placeholder="cantidad"  name="cantidad"
+	 id="cantidad" [(ngModel)]="model.cantidad" required="true"> </div>
+<div>
+<button type="submit" class="btn btn-sm btn-success" (click)="multiplicar(frito,model.cantidad)"><mat-icon>check</mat-icon>aceptar</button>
+<button type="reset" class="btn btn-sm btn-danger"><mat-icon>cancel</mat-icon>cancelar</button>
+	 <div class="col-lg-6"><label>Precio:  <h2>${{n}}</h2> <!--<input type="text"    [(ngModel)]="n" name="">--></label>
+	  </div>
+	  	</div>	
+    
+	</form>
+	<div class="col" *ngIf="t">
+	
+	<div><button mat-icon-button color="primary" (click)="cerrar()"   (click)="agregar()"><mat-icon>check_circle</mat-icon>confirmar </button></div>
+	</div>
+</div> 
+</div>
+</div>
+
+
+
+</div>

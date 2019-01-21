@@ -1,0 +1,24 @@
+
+
+<div  class="containar-fluid">
+ <div class="table-responsive-sm">
+ <table class="table" >
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Cantidad/Gr</th>
+           </tr>
+  </thead>
+  <tbody *ngFor="let i of p">
+    <tr>
+      <th scope="row">{{i.id}}</th>
+      <td >{{i.nombre}} </td>
+      <td>{{i.cantidad}}</td>
+     </tr>
+    
+  </tbody>
+</table>
+</div>
+
+</div>
